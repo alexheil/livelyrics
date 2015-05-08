@@ -1,0 +1,26 @@
+<%= provide(:title, "Add An Artist | live:lyrics") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+      <div class="form-title">
+        <h2>Add an Artist</h2>
+      </div>
+      <%= form_for(@artist, url: artists_path) do |f| %>
+        <%= render 'partials/artist_error_messages' %>
+        <div class="field">
+          <%= f.text_field :artist_name, placeholder: "Artist Name", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :artist_facebook, placeholder: "Facebook URL (optional)", class: "text-field" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Add Artist", class: "submit-button" %>
+        </div>
+      <% end %>
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

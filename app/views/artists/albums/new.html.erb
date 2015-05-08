@@ -1,0 +1,27 @@
+<%= provide(:title, "Add An Album | #{@artist.artist_name}") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+      <div class="form-title">
+        <h2>Add an Album for <%= @artist.artist_name %></h2>
+      </div>
+      <%= form_for(@album, url: artist_albums_path) do |f| %>
+        <%= render 'partials/album_error_messages' %>
+        <%= f.hidden_field :artist_id %>
+        <div class="field">
+          <%= f.text_field :name, placeholder: "Album Name", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :year, placeholder: "Album Year", class: "text-field" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Add Album", class: "submit-button" %>
+        </div>
+      <% end %>
+    </div>
+    <%= render 'partials/artist_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

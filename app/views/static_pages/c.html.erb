@@ -1,0 +1,20 @@
+<%= provide(:title, "C") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+
+      <% @artists.each do |artist| %>
+        <% if artist.artist_name.starts_with?("C") || artist.artist_name.starts_with?("c") %>
+        <div class="track-separate">
+          <%= link_to artist.artist_name, artist_path(artist) %>
+        </div>
+        <% end %>
+       <% end %>
+
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

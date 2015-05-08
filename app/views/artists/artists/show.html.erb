@@ -1,0 +1,42 @@
+<%= provide(:title, "#{@artist.artist_name} lyrics") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+
+      <div class="artist-name">
+        <h2><%= @artist.artist_name %></h2>
+        <% if @artist.artist_facebook == ""  %>
+        <% else %>
+          <%= link_to "Facebook", @artist.artist_facebook, :target => "_blank" %>
+        <% end %>
+      </div>
+      <% @artist.albums.each do |album| %>
+      <div class="album-separate">
+        <span class="album-name"><%= link_to album.name, artist_album_path(@artist, album) %></span> - <%= album.year %>
+      </div >
+      <% album.lyrics.each do |lyric| %>
+      <div class="track-separate">
+        <%= lyric.track_number %> - <%= link_to lyric.track_name, artist_album_lyric_path(@artist, album, lyric) %>
+      </div>
+      <% end %>
+      <div class="track-separate">
+        <%= link_to "add a track to #{album.name}", new_artist_album_lyric_path(@artist, album) %>
+      </div>
+    <% end %>
+      <div class="album-separate">
+        <%= link_to "add an album for #{@artist.artist_name}", new_artist_album_path(@artist) %>
+      </div>
+
+      <% if user_signed_in? && current_user.username == "alexheil" %>
+      <div class="hello-alex">
+        <%= link_to "Hello, Alex.", artist_path, data: { confirm: "Care for some Mighty Taco?" }, method: :delete %>
+      </div>
+      <% end %>
+
+    </div>
+    <%= render 'partials/artist_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

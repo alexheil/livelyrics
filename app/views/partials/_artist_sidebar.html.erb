@@ -1,0 +1,40 @@
+<div class="sidebar">
+
+  <%= form_tag(artists_path, :method => "get") do %>
+    <div class="field">
+      <%= text_field_tag :search, params[:search], placeholder: "Search Artists", class: "text-field" %>
+    </div>
+      <%= submit_tag "Search", class: "submit-button", :style => "display: none;" %>
+  <% end %>
+
+  <% @artist.albums.each do |album| %>
+  <div class="album-separate">
+    <span class="album-name"><%= link_to album.name, artist_album_path(@artist, album) %></span> - <%= album.year %>
+  </div >
+  <% album.lyrics.each do |lyric| %>
+  <div class="track-separate">
+    <%= lyric.track_number %> - <%= link_to lyric.track_name, artist_album_lyric_path(@artist, album, lyric) %>
+  </div>
+  <% end %>
+  <div class="track-separate">
+    <%= link_to "add a track to #{album.name}", new_artist_album_lyric_path(@artist, album) %>
+  </div>
+  <% end %>
+  <div class="album-separate">
+    <%= link_to "add an album for #{@artist.artist_name}", new_artist_album_path(@artist) %>
+  </div>
+
+  <div class="ad-separate">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Live Lyrics Side -->
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-7899643142531807"
+      data-ad-slot="2731057251"
+      data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+</div>

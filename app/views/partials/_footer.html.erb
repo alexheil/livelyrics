@@ -1,0 +1,25 @@
+<footer class="full-footer-container">
+  <div class="container">
+    <nav class="footer">
+      <span><%= link_to "live:lyrics", root_url, class: "nav-links" %></span>
+      <ul>
+        <li><%= link_to "Learn How It Works", learn_how_it_works_path, class: "nav-links" %></li>
+        <li><%= link_to "Terms of Use", terms_of_use_path, class: "nav-links" %></li>
+        <li><%= link_to "Privacy", privacy_path, class: "nav-links" %></li>
+        <li><%= link_to "DMCA Policy", dmca_policy_path, class: "nav-links" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Sign Out", sign_out_path, class: "nav-links" %></li>
+        <% else %>
+          <li><%= link_to "Register", register_path, class: "nav-links" %></li>
+          <li><%= link_to "Sign In", sign_in_path, class: "nav-links" %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="footer-disclaimer">
+      All lyrics are the property and copyright of their respective owners. All lyrics provided for educational purposes and personal use only.
+    </div>
+    <div class="footer-disclaimer">
+      <%= pluralize(User.count, "user") %> have created <%= pluralize(Artist.count, "artist") %>, <%= pluralize(Album.count, "album") %>, and <%= pluralize(Lyric.count, "lyric") %>.
+    </div>
+  </div>
+</footer>

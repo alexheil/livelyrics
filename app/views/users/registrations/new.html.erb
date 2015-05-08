@@ -1,0 +1,42 @@
+<%= provide(:title, "Register") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+      <div class="form-title">
+        <h2>Register for live:lyrics</h2>
+      </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.text_field :username, autofocus: true, placeholder: "Username", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.email_field :email, placeholder: "Email Address", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Your Password", class: "text-field" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Sign Up", class: "submit-button" %>
+        </div>
+      <% end %>
+      <div class="form-info">
+        By clicking "Sign Up" you acknoweldge that you have read and agree to the <%= link_to "Terms of Use", terms_of_use_path %> and <%= link_to"Learn How It Works", learn_how_it_works_path %>.
+      </div>
+      <div class="form-info">
+        Your password needs to be at least 8 characters long and you must give up your arm to fully register for the site... just kidding, but you do need to confirm your email before you can fully sign in.
+      </div>
+      <div class="shared-links">
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

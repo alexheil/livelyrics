@@ -1,0 +1,50 @@
+<%= provide(:title, "Settings") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+      <div class="form-title">
+        <h2>Update Your Account</h2>
+      </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.text_field :username, autofocus: true, placeholder: "Change Your Username", class: "text-field"  %>
+        </div>
+        <div class="field">
+          <%= f.text_field :publisher_id, placeholder: "Google AdSense Publisher ID", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :data_ad_slot , placeholder: "Google AdSense Data Ad Slot ID", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.email_field :email, placeholder: "Change Your Email Address", class: "text-field" %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "New Password", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Your New Password", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current Password", class: "text-field" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "update my account", class: "submit-button" %>
+        </div>
+      <% end %>
+      <div class="form-info">
+        Leave your password blank if you do not want to change it. If you want to change it your password needs to be at least 8 characters long. Your current password will confirm your changes.
+      </div>
+      <div class="delete-account">
+        <%= button_to "Cancel My Account", registration_path(resource_name), data: { confirm: " This cannot be undone. Ever..." }, method: :delete, class: "submit-button" %>
+      </div>
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

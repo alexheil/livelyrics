@@ -1,0 +1,23 @@
+<div class="sidebar">
+
+  <%= form_tag(artists_path, :method => "get") do %>
+    <div class="field">
+      <%= text_field_tag :search, params[:search], placeholder: "Search Artists", class: "text-field" %>
+    </div>
+    <%= submit_tag "Search", class: "submit-button", :style => "display: none;" %>
+  <% end %>
+
+  <div class="ad-separate">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Live Lyrics Side -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7899643142531807"
+         data-ad-slot="2731057251"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+</div>

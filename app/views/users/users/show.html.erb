@@ -1,0 +1,21 @@
+<%= provide(:title, "#{@user.username}") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+
+      <div class="username">
+        <span class="username-text"><%= @user.username %></span> - <%= @user.lyrics.count %> lyrics posted
+      </div>
+      <% @user.lyrics.each do |lyrics| %>
+      <div class="track-separate">
+        <%= link_to lyrics.track_name, artist_album_lyric_path(Artist.find(lyrics.artist_id).slug, Album.find(lyrics.album_id).slug, lyrics) %>
+      </div>
+      <% end %>
+
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

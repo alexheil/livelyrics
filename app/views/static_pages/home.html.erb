@@ -1,0 +1,108 @@
+<%= render 'partials/home_header' %>
+<%= render 'partials/home_alpha' %>
+<div class="wrapper">
+  <div class="full-width-container home-container">
+    <div class="container">
+      <div class="home-line">
+
+
+        <div class="mighty-site-title">
+          <%= link_to 'live:lyrics', artists_path %>
+        </div>
+        <div class="veggie-site-title">
+          Make money by adding lyrics to our site. <%= link_to "Learn How It Works", learn_how_it_works_path, class: "home-nav-links" %>!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="four">
+      Recent Artists
+      <% if @artists.any? %>
+        <% @artists.sort{ |a,b| b.created_at <=> a.created_at }.take(10).each do |artist| %>
+        <div>
+          <%= link_to artist.artist_name, artist_path(artist) %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="four">
+      Recent Albums
+      <% if @albums.any? %>
+        <% @albums.sort{ |a,b| b.created_at <=> a.created_at }.take(10).each do |album| %>
+        <div>
+          <%= link_to album.name, artist_album_path(Artist.find(album.artist_id).slug, album) %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="four">
+      Recent Tracks
+      <% if @lyrics.any? %>
+        <% @lyrics.sort{ |a,b| b.created_at <=> a.created_at }.take(10).each do |lyrics| %>
+        <div>
+          <%= link_to lyrics.track_name, artist_album_lyric_path(Artist.find(lyrics.artist_id).slug, Album.find(lyrics.album_id).slug, lyrics) %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="four">
+      Recent Users
+      <% if @users.any? %>
+        <% @users.sort{ |a,b| b.created_at <=> a.created_at }.take(10).each do |user| %>
+        <div>
+          <%= link_to user.username, user_path(user) %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+     <div class="four">
+      Popular Artists
+      <% if @artists.any? %>
+        <% @artists.take(10).each do |artist| %>
+        <div>
+          <%= link_to artist.artist_name, artist_path(artist) %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="four">
+      Popular Albums
+      <% if @albums.any? %>
+        <% @albums.take(10).each do |album| %>
+        <div>
+          <%= link_to album.name, artist_album_path(Artist.find(album.artist_id).slug, album) %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="four">
+      Popular Tracks
+      <% if @lyrics.any? %>
+        <% @lyrics.take(10).each do |lyrics| %>
+        <div>
+          <%= link_to lyrics.track_name, artist_album_lyric_path(Artist.find(lyrics.artist_id).slug, Album.find(lyrics.album_id).slug, lyrics) %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="four">
+      Popular Users
+      <% if @users.any? %>
+        <% @users.sort{ |a,b| b.lyrics.count <=> a.lyrics.count  }.take(10).each do |user| %>
+        <div>
+          <%= link_to user.username, user_path(user) %> - <%= pluralize(user.lyrics.count, "lyric") %> posted
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render 'partials/footer' %>

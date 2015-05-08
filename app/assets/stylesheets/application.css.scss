@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/* ********************** UNIVERSAL ********************** */
+$main-color: #AEEA00;
+$accent-color1: #827717;
+$my-black: #212121;
+$normal-font: Georgia, "Times New Roman", Times, serif;
+$fancy-font: 'Open Sans', Helvetica, 'Open Sans', arial, sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  line-height: 1.75em;
+  font-family: $normal-font;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.full-width-container {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  &:hover {
+    color: $accent-color1;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+  font-family: $fancy-font;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-family: $fancy-font;
+}
+
+h4 {
+  font-size: 3em;
+  font-family: $fancy-font;
+  font-weight: 300;
+  line-height: 3rem;
+}
+
+.content {
+  margin: 1vh 0;
+  width: 77%;
+  margin-right: 2%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.sidebar {
+  margin: 1vh 0;
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.alert-notice {
+  width: 100%;
+  background-color: #4CAF50;
+}
+
+.alert-alert {
+  width: 100%;
+  background-color: #F44336;
+}
+
+.alert {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2vh 0;
+  font-family: $fancy-font
+}
+
+@media screen and (max-width: 800px) {
+
+  .content {
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .sidebar {
+    margin: 10vh 0 1vh 0;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .alpha-nav {
+    text-align: center;
+  }
+
+}

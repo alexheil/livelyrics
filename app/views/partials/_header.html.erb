@@ -1,0 +1,19 @@
+<header class="full-width-container nav-background">
+  <div class="header-container">
+    <nav class="nav">
+      <%= link_to "live:lyrics", root_url, class: "site-title" %>
+      <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Add An Artist", new_artist_path, class: "nav-links" %></li>
+        <li><%= link_to "Your Page", user_path(current_user), class: "nav-links" %></li>
+        <li><%= link_to "Settings", edit_user_registration_path, class: "nav-links" %></li>
+        <li><%= link_to "Sign Out", sign_out_path, class: "nav-links" %></li>
+      <% else %>
+        <li><%= link_to "Learn How It Works", learn_how_it_works_path, class: "nav-links" %></li>
+        <li><%= link_to "Sign In", sign_in_path, class: "nav-links" %></li>
+        <li><%= link_to "Register", register_path, class: "register" %></li>
+      <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

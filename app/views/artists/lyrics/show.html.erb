@@ -1,0 +1,87 @@
+<%= provide(:title, "#{@lyric.track_name} lyrics | #{@artist.artist_name}") %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+
+      <div class="ad-separate">
+        <% if @user.publisher_id == "" || @user.data_ad_slot == "" %>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- Live Lyrics Top -->
+          <ins class="adsbygoogle adslot_1"
+               style="display:block"
+               data-ad-client="ca-pub-7899643142531807"
+               data-ad-slot="9394869652"
+               data-ad-format="auto"></ins>
+          <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <% else %>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- Live Lyrics Top -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="<%= @user.publisher_id %>"
+               data-ad-slot="<%= @user.data_ad_slot %>"
+               data-ad-format="auto"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        <% end %>
+      </div>
+
+      <div class="artist-name">
+        <h2><%= link_to @artist.artist_name, artist_path(@artist) %></h2>
+        <% if @artist.artist_facebook == ""  %>
+        <% else %>
+          <%= link_to "Facebook", @artist.artist_facebook, :target => "_blank" %>
+        <% end %>
+      </div>
+      <div class="album-separate">
+        <span class="album-name"><%= link_to @album.name, artist_album_path(@artist, @album) %></span>
+      </div>
+      <div class="album-separate">
+        <%= @lyric.track_name %>
+      </div>
+      <div class="lyric-separate">
+        <%= @lyric.lyrics %>
+      </div>
+      <div class="album-separate">
+        Submitted by <%= link_to @user.username, user_path(@user) %>
+      </div>
+
+      <%= render 'partials/amazon_affiliate' %>
+
+      <div class="album-separate">
+        What is the meaning of <%= @lyric.track_name %> by <%= @artist.artist_name %>?
+      </div>
+      <div class="album-separate">
+        <%= form_for(Comment.new, url: artist_album_lyric_comments_path(@artist, @album, @lyric)) do |f| %>
+          <%= f.text_area :content, placeholder: "What do you think this song means?", class: "text-area" %>
+          <div class="actions">
+            <%= f.submit "comment", class: "submit-button" %>
+          </div>
+        <% end %>
+      </div>
+      <% if @lyric.comments.any? %>
+        <% @lyric.comments.each do |comment| %>
+        <div class="album-separate">
+          <%= link_to comment.username, user_path(comment.user_id) %> posted <%= time_ago_in_words(comment.created_at) %> ago</br>
+          <%= comment.content %>
+        </div>
+        <% end %>
+      <% else %>
+        <div class="track-separate">
+          No one has any opinion about the meaning of <%= @lyric.track_name %> yet. Add yours!
+        </div>
+      <% end %>
+
+      <% if user_signed_in? && current_user.username == "alexheil" %>
+      <div class="hello-alex">
+        <%= link_to "Hello, Alex.", artist_album_lyric_path, data: { confirm: "Care for some Mighty Taco?" }, method: :delete %>
+      </div>
+      <% end %>
+
+    </div>
+  <%= render 'partials/artist_sidebar' %>
+</div>
+<%= render 'partials/footer' %>

@@ -1,0 +1,24 @@
+<%= provide(:title, "All Artists") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+
+      <% if @artists.present? %>
+        <% @artists.each do |artist| %>
+        <div class="track-separate">
+          <%= link_to artist.artist_name, artist_path(artist) %>
+        </div>
+       <% end %>
+      <% else %>
+      <div class="track-separate">
+        There are no artists containing the term(s) "<%= params[:search] %>."
+      </div>
+      <% end %>
+
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

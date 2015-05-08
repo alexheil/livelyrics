@@ -1,0 +1,26 @@
+<%= provide(:title, "Resend Confirmation Instructions") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+      <div class="form-title">
+        <h2>Resend Confirmation Instructions</h2>
+      </div>
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, placeholder: "Your Email", class: "text-field" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Resend Confirmation Instructions", class: "submit-button" %>
+        </div>
+      <% end %>
+      <div class="shared-links">
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

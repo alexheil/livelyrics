@@ -1,0 +1,59 @@
+en:
+  activerecord:
+    attributes:
+      artist:
+        artist_name: ""
+        artist_facebook: ""
+      album:
+        name: ""
+        year: ""
+      lyric:
+        track_name: ""
+        track_number: ""
+        lyrics: ""
+      user:
+        username: ""
+    errors:
+      models:
+        artist:
+          attributes:
+            artist_name:
+              blank: "You need to include an artist name."
+              too_long: "Your artist name is too long. Keep it under 40 characters."
+            artist_facebook:
+             invalid: "That isn't a Facebook URL."
+        album:
+          attributes:
+            name:
+              blank: "You need to include an album name."
+              too_long: "Your album name is too long. Keep it under 60 characters."
+              taken: "Someone has already created that album for this artist."
+            year:
+              blank: "You need to include an album year."
+              wrong_length: "Don't you know how many digits long a year is? 4!"
+              greater_than: "You can't tell me that album came out before 1900."
+              less_than_or_equal_to: "That far into the future, huh? The CIA is coming for you now, time traveller."
+              not_a_number: "Whatever you just put into that album year field, it's not a number."
+        lyric:
+          attributes:
+            track_name:
+              taken: "Someone has already created that track for this album."
+              blank: "You need to include a track name."
+              too_long: "Your track name is too long. Keep it under 80 characters."
+            track_number:
+              taken: "That track number already exists for this album."
+              blank: "You need to include a track year."
+              too_long: "One or two digits allowed for your track number. I hope you understand."
+              greater_than: "Your track number has to be over zero, bruh."
+              not_a_number: "That track number is defintely not a number."
+              less_than_or_equal_to: "Correct me if I'm wrong, but there is no way there are over 100 songs on this album."
+            lyrics:
+              blank: "Umm, forgetting the lyrics?"
+              too_long: "I think you put too many words in those lyrics. I could definitely go for some Mighty Taco though."
+        user:
+          attributes:
+            username:
+              taken: "Someone has that username already. Hunt them down!"
+              blank: "You left your username blank."
+              too_long: "Your username is too long. Keep it under 50 characters."
+              invalid: "You can't include spaces in your username."

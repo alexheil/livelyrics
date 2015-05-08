@@ -1,0 +1,18 @@
+<header class="full-width-containe">
+  <div class="header-container">
+    <nav class="home-nav">
+      <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Add An Artist", new_artist_path, class: "home-nav-links" %></li>
+        <li><%= link_to "Your Page", user_path(current_user), class: "home-nav-links" %></li>
+        <li><%= link_to "Settings", edit_user_registration_path, class: "home-nav-links" %></li>
+        <li><%= link_to "Sign Out", sign_out_path, class: "home-nav-links" %></li>
+      <% else %>
+        <li><%= link_to "Learn How It Works", learn_how_it_works_path, class: "home-nav-links" %></li>
+        <li><%= link_to "Sign In", sign_in_path, class: "home-nav-links" %></li>
+        <li><%= link_to "Register", register_path, class: "home-register" %></li>
+      <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

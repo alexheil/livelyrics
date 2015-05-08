@@ -1,0 +1,5 @@
+<p>Thanks for registering for live:lyrics, <%= @resource.username %>!</p>
+
+<p>Click the link below to activate your account. See you on the other side!</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>

@@ -1,0 +1,32 @@
+<%= provide(:title, "Add Lyrics | #{@artist.artist_name}") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+      <div class="form-title">
+        <h2>Add a Track to <%= @album.name %> by <%= @artist.artist_name %></h2>
+      </div>
+      <%= form_for(@lyric, url: artist_album_lyrics_path) do |f| %>
+      <%= render 'partials/lyric_error_messages' %>
+        <%= f.hidden_field :album_id %>
+        <%= f.hidden_field :artist_id %>
+        <%= f.hidden_field :user_id %>
+        <div class="field">
+          <%= f.text_field :track_number, placeholder: "Track Number", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :track_name, placeholder: "Track Name", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_area :lyrics, placeholder: "Track Lyrics", class: "text-area" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Add Lyrics", class: "submit-button" %>
+        </div>
+      <% end %>
+    </div>
+    <%= render 'partials/artist_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

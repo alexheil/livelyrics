@@ -12,7 +12,7 @@ class Artist < ActiveRecord::Base
 
   before_save :smart_add_url_protocol
   before_save :downcase_url
-  before_save :should_generate_new_friendly_id?
+  before_save :should_generate_new_friendly_id?, if: :artist_name_changed?
 
   def self.search(search)
     where("artist_name LIKE ?", "%#{search}%")
@@ -22,7 +22,7 @@ class Artist < ActiveRecord::Base
 
     def smart_add_url_protocol
       unless self.artist_facebook[/\Ahttp:\/\//] || self.artist_facebook[/\Ahttps:\/\//]
-        self.artist_facebook = "https://#{self.facebook_url}" unless artist_facebook == ""
+        self.artist_facebook = "https://#{self.artist_facebook}" unless artist_facebook == ""
       end
     end
 

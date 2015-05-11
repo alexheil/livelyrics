@@ -16,7 +16,7 @@ class Lyric < ActiveRecord::Base
   validates :lyrics, presence: true, length: { maximum: 10000 }
   validates :slug, presence: true, :uniqueness => {:scope => :album_id}
 
-  before_save :should_generate_new_friendly_id?
+  before_save :should_generate_new_friendly_id?, if: :track_name_changed?
 
   private
 

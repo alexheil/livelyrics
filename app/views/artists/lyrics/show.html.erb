@@ -6,8 +6,8 @@
       <div class="ad-separate">
         <% if @user.publisher_id == "" || @user.data_ad_slot == "" %>
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- Live Lyrics Top -->
-          <ins class="adsbygoogle adslot_1"
+          <!-- let lyrics Top -->
+          <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="ca-pub-7899643142531807"
                data-ad-slot="9394869652"
@@ -17,7 +17,7 @@
         </script>
         <% else %>
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- Live Lyrics Top -->
+          <!-- let lyrics Top -->
           <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="<%= @user.publisher_id %>"

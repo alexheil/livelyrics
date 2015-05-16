@@ -103,3 +103,21 @@ $fancy-font: 'Open Sans', Helvetica, sans-serif;
       line-height: 30px;
   }
 }
+
+.home-field {
+  margin: 1vh auto;
+  text-align: center;
+}
+
+.home-text-field {
+  width: 50%;
+  font-family: $fancy-font;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 3px solid $my-black;
+  display: inline-block;
+}

@@ -121,3 +121,11 @@ $fancy-font: 'Open Sans', Helvetica, sans-serif;
   border-bottom: 3px solid $my-black;
   display: inline-block;
 }
+
+@media screen and (max-width: 600px) {
+
+  .home-text-field {
+    width: 100%;
+  }
+
+}

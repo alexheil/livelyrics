@@ -13,7 +13,7 @@
         <% end %>
       </div>
       <div class="album-separate">
-        <span class="album-name"><%= @album.name %></span>
+        <span class="album-name"><%= @album.name %></span> - <%= @album.year %>
       </div>
       <% @album.lyrics.each do |lyric| %>
       <div class="track-separate">

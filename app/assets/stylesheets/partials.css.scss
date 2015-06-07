@@ -1,5 +1,5 @@
-$main-color: #AEEA00;
-$accent-color1: #827717;
+$main-color: #4CAF50;
+$accent-color1: #A5D6A7;
 $my-black: #212121;
 $fancy-font: 'Open Sans', Helvetica, sans-serif;
 
@@ -79,7 +79,7 @@ $fancy-font: 'Open Sans', Helvetica, sans-serif;
   font-size: 2em;
   &:hover {
     text-decoration: none;
-    color: $accent-color1;
+    color: $main-color;
   }
 }
 
@@ -102,7 +102,7 @@ $fancy-font: 'Open Sans', Helvetica, sans-serif;
   color: $my-black;
   font-family: $fancy-font;
   &:hover {
-    color: $accent-color1;
+    color: $main-color;
   }
 }
 
@@ -114,7 +114,7 @@ $fancy-font: 'Open Sans', Helvetica, sans-serif;
   -moz-transition: .3s;
   -o-transition: .3s;
   &:hover {
-    color: $accent-color1;
+    color: $main-color;
     background-color: $my-black;
     -webkit-transition: .3s;
     -moz-transition: .3s;
@@ -182,4 +182,40 @@ $fancy-font: 'Open Sans', Helvetica, sans-serif;
 .amazon-tiny {
   padding: 2vh 0 0 0;
   font-family: $fancy-font;
+}
+
+/* ****************************** MEDIA QUERY **************************** */
+
+@media screen and (max-width: 800px) {
+
+  .site-title {
+    text-align: center;
+  }
+
+  .nav {
+    text-align: center;
+    ul {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  .alpha-nav {
+    ul {
+      text-align: center;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    span {
+      float: none;
+      text-align: center;
+    }
+    ul {
+      float: none;
+      text-align: center;
+    }
+  }
+
 }

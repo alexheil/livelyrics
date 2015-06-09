@@ -21,7 +21,7 @@
       </div>
       <% end %>
       <div class="album-separate">
-        <%= link_to "add a track to #{@album.name}", new_artist_album_lyric_path(@artist, @album) %>
+        <%= link_to "Add a track to #{@album.name}", new_artist_album_lyric_path(@artist, @album) %>
       </div>
 
       <% if user_signed_in? && current_user.username == "alexheil" %>

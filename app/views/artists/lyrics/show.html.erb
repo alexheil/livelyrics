@@ -40,7 +40,7 @@
         <span class="album-name"><%= link_to @album.name, artist_album_path(@artist, @album) %></span>
       </div>
       <div class="album-separate">
-        <%= @lyric.track_name %>
+        <strong><%= @lyric.track_name %></strong>
       </div>
       <div class="lyric-separate">
         <%= @lyric.lyrics %>

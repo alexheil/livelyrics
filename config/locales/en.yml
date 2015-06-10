@@ -26,7 +26,7 @@ en:
           attributes:
             name:
               blank: "You need to include an album name."
-              too_long: "Your album name is too long. Keep it under 60 characters."
+              too_long: "Your album name is too long. Keep it under 83 characters."
               taken: "Someone has already created that album for this artist."
             year:
               blank: "You need to include an album year."
@@ -39,7 +39,7 @@ en:
             track_name:
               taken: "Someone has already created that track for this album."
               blank: "You need to include a track name."
-              too_long: "Your track name is too long. Keep it under 80 characters."
+              too_long: "Your track name is too long. Keep it under 150 characters."
             track_number:
               taken: "That track number already exists for this album."
               blank: "You need to include a track year."

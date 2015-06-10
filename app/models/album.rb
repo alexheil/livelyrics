@@ -7,7 +7,7 @@ class Album < ActiveRecord::Base
 
   default_scope -> { order('year DESC') }
 
-  validates :name, :uniqueness => {:scope => :artist_id}, presence: true, length: { maximum: 60 }
+  validates :name, :uniqueness => {:scope => :artist_id}, presence: true, length: { maximum: 83 }
   validates :year, presence: true, length: { is: 4 }, numericality: { less_than_or_equal_to: 2016, greater_than: 1900}
 
   before_save :should_generate_new_friendly_id?, if: :name_changed?

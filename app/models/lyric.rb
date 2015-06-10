@@ -11,7 +11,7 @@ class Lyric < ActiveRecord::Base
 
   default_scope -> { order('track_number') }
 
-  validates :track_name, :uniqueness => {:scope => :album_id}, presence: true, length: { maximum: 80 }
+  validates :track_name, :uniqueness => {:scope => :album_id}, presence: true, length: { maximum: 150 }
   validates :track_number, :uniqueness => {:scope => :album_id}, presence: true, length: { maximum: 2 }, numericality: { less_than_or_equal_to: 99, greater_than: 0}
   validates :lyrics, presence: true, length: { maximum: 10000 }
   validates :slug, presence: true, :uniqueness => {:scope => :album_id}

@@ -2,13 +2,13 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username, use: :slugged
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable
-   #:omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :timeoutable
+   #:omniauthable, :confirmable, :lockable
 
   has_many :lyrics
   has_many :comments, dependent: :destroy
 
-  validates :username, presence: true, uniqueness: true, length: { maximum: 50 }, format: { with: /\A[\S]+\Z/i }
+  validates :username, presence: true, uniqueness: true, length: { maximum: 50 }, format: { with: /\A[a-zA-Z0-9 ]+\Z/i }
 
   before_save :should_generate_new_friendly_id?, if: :username_changed?
   before_save :downcase_username

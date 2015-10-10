@@ -122,6 +122,26 @@ $fancy-font: 'Open Sans', Helvetica, sans-serif;
   display: inline-block;
 }
 
+@media screen and (max-width: 800px) {
+
+  .text-field {
+    width: 100%;
+  }
+
+  .text-area {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .delete-account {
+    width: 100%;
+  }
+
+}
+
 @media screen and (max-width: 600px) {
 
   .home-text-field {
@@ -129,3 +149,4 @@ $fancy-font: 'Open Sans', Helvetica, sans-serif;
   }
 
 }
+

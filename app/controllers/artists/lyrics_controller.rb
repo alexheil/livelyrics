@@ -31,7 +31,7 @@ class Artists::LyricsController < ApplicationController
     @lyric.user_id = current_user.id
     if @lyric.save
       flash[:notice] = "You just created " + @lyric.track_name + "!"
-      redirect_to artist_album_path(@lyric.artist_id, @album)
+      redirect_to artist_album_path(@artist, @album)
     else
       flash.now[:alert] = 'Whoa! Something went wrong!'
       render 'new'

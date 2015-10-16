@@ -1,4 +1,4 @@
-<%= provide(:title, "#{@artist.artist_name} lyrics") %>
+<%= provide(:title, sanitize(@artist.artist_name) + " lyrics") %>
 <%= render 'partials/header' %>
 <%= render 'partials/alpha' %>
 <div class="wrapper">

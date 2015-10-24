@@ -42,7 +42,7 @@
       <div class="album-separate">
         <strong><%= @lyric.track_name %></strong>
       </div>
-      <div class="lyric-separate">
+      <div class="lyric-separate" id="lyrics">
         <%= @lyric.lyrics %>
       </div>
       <div class="album-separate">
@@ -52,13 +52,13 @@
       <%= render 'partials/amazon_affiliate' %>
 
       <div class="album-separate">
-        What is the meaning of <%= @lyric.track_name %> by <%= @artist.artist_name %>?
+        <strong>What is the meaning of <%= @lyric.track_name %> by <%= @artist.artist_name %>?</strong>
       </div>
       <div class="album-separate">
         <%= form_for(Comment.new, url: artist_album_lyric_comments_path(@artist, @album, @lyric)) do |f| %>
           <%= f.text_area :content, placeholder: "What do you think this song means?", class: "text-area" %>
           <div class="actions">
-            <%= f.submit "comment", class: "submit-button" %>
+            <%= f.submit "Comment", class: "submit-button" %>
           </div>
         <% end %>
       </div>

@@ -14,7 +14,7 @@
       </div>
       <% @artist.albums.each do |album| %>
       <div class="album-separate">
-        <span class="album-name"><%= link_to album.name, artist_album_path(@artist, album) %></span> - <%= album.year %>
+        <span class="album-name accent"><%= link_to album.name, artist_album_path(@artist, album) %></span> - <%= album.year %>
       </div >
       <% album.lyrics.each do |lyric| %>
       <div class="track-separate">

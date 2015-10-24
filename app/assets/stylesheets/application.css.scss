@@ -17,30 +17,36 @@
 
 /* ********************** UNIVERSAL ********************** */
 $main-color: #4CAF50;
-$accent-color1: #A5D6A7;
+$accent-color1: #A9E2AD;
+$accent-color2: #DE9B61;
+$accent-color3: #FFC695;
 $my-black: #212121;
 $normal-font: Georgia, "Times New Roman", Times, serif;
-$fancy-font: 'Open Sans', Helvetica, arial, sans-serif;
+$fancy-font: "Open Sans", Helvetica, Arial, sans-serif;
 
-* {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  box-sizing: border-box;
-}
 
 body {
+  padding: 0;
+  margin: 0;
   font-size: 18px;
   line-height: 1.75em;
   font-family: $normal-font;
 }
 
+ul {
+  list-style: none;
+}
+
 .wrapper {
   width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .full-width-container {
   width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .container {
@@ -57,16 +63,22 @@ a {
 }
 
 h2 {
+  padding: 0;
+  margin: 0;
   font-size: 1.5em;
   font-family: $fancy-font;
 }
 
 h3 {
+  padding: 0;
+  margin: 0;
   font-size: 1.2em;
   font-family: $fancy-font;
 }
 
 h4 {
+  padding: 0;
+  margin: 0;
   font-size: 3em;
   font-family: $fancy-font;
   font-weight: 300;
@@ -109,6 +121,474 @@ h4 {
   font-family: $fancy-font;
 }
 
+.accent {
+  color: $accent-color2;
+  a {
+    color: $accent-color2;
+    &:hover {
+      color: $accent-color3;
+    }
+  }
+}
+
+/* ******************************* LYRICS ******************************** */
+
+.artist-name {
+  margin: 1vh 0;
+  font-family: $fancy-font;
+}
+
+.album-separate {
+  font-family: $fancy-font;
+  margin: 3vh 0;
+}
+
+.album-name {
+  font-size: 1.3em;
+}
+
+.track-separate {
+  font-family: $fancy-font;
+  margin: 1vh 0;
+}
+
+.hello-alex {
+  display: none;
+  margin: 20vh 0;
+  font-family: $fancy-font;
+  a {
+    color: #212121;
+    &:hover {
+      cursor: text;
+      color: #212121;
+    }
+  }
+}
+
+.lyric-separate {
+  font-family: $fancy-font;
+  word-break: break-word;
+  white-space: pre-line;
+  margin: 1vh 0;
+}
+
+.ad-separate {
+  width: 95%;
+  font-family: $fancy-font;
+  margin: 3vh 0;
+  padding: 2vh 0;
+  border-top: 2px #212121 solid;
+  border-bottom: 2px #212121 solid;
+}
+
+/* ************************ USERS ************************** */
+
+.username {
+  font-family: $fancy-font;
+  margin: 1vh 0 3vh 0;
+}
+
+.username-text {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+/* ************************ STATIC *********************** */
+
+.home-container {
+  margin: 20vh 0;
+}
+
+.home-line {
+  padding: 2vh 0;
+  font-family: $fancy-font;
+  a {
+    color: $my-black;
+  }
+}
+
+.mighty-site-title {
+  text-align: center;
+  font-size: 15em;
+  line-height: 15rem;
+  a {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    &:hover {
+      color: $main-color;
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -o-transition: .3s;
+    }
+  }
+}
+
+.veggie-site-title {
+  text-align: center;
+  margin: 10vh 0;
+}
+
+.four {
+  width: 24%;
+  margin: 1vh auto;
+  display: inline-block;
+  font-family: $fancy-font;
+  vertical-align: top;
+}
+
+/* ********************************** FORMS *************************** */
+
+.form-title {
+  margin: 1vh 0;
+}
+
+.field {
+  margin: 1vh 0;
+}
+
+.text-field {
+  width: 95%;
+  font-family: $fancy-font;
+  font-size: 16px;
+  padding: 10px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 3px solid $main-color;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.text-area {
+  width: 95%;
+  min-width: 95%;
+  max-width: 95%;
+  height: 25vh;
+  font-family: $fancy-font;
+  font-size: 16px;
+  padding: 10px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 3px solid $main-color;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.remember-me {
+  font-family: $fancy-font;
+}
+
+.actions {
+  width: 95%;
+  padding-top: 10px;
+}
+
+.delete-account {
+  width: 95%;
+  padding-top: 10px;
+  margin: 10vh 0;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px 0px 7px 0px;
+  text-align: center;
+  font-family: $fancy-font;
+  font-size: 1.3em;
+  background-color: $main-color;
+  border-bottom: 3px solid $main-color;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: $my-black;
+  cursor: pointer;
+  box-sizing: border-box;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    border-bottom: 3px solid $my-black;
+  }
+}
+
+.form-info {
+  width: 95%;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  font-family: $fancy-font;
+}
+
+.shared-links {
+  font-family: $fancy-font;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+}
+
+.form-links {
+  padding: 5px 0 5px 0;
+}
+
+#error_explanation {
+  color: #f00;
+  font-family: $fancy-font;
+  ul {
+      padding: 5px 0 5px 0;
+      list-style: none;
+      line-height: 30px;
+  }
+}
+
+.home-field {
+  margin: 1vh auto;
+  text-align: center;
+}
+
+.home-text-field {
+  width: 50%;
+  font-family: $fancy-font;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 3px solid $my-black;
+  display: inline-block;
+}
+
+/* ************** HOME HEADER *************************** */
+
+.home-nav {
+  width: 100%;
+  display: inline-block;
+  ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      font-family: $fancy-font;
+      padding: 2vh 0 1vh 0;
+      position: relative;
+      margin-left: 5vw;
+    }
+  }
+}
+
+.home-alpha-nav {
+  width: 100%;
+  display: inline-block;
+  ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      font-family: $fancy-font;
+      padding: 1vh 0 2vh 0;
+      position: relative;
+      margin-right: 1vw;
+    }
+  }
+}
+
+.home-nav-links {
+  color: $my-black;
+  font-family: $fancy-font;
+  &:hover {
+    color: $main-color;
+  }
+}
+
+.home-register {
+  border: 2px solid $my-black;
+  color: $my-black;
+  padding: 1vh 1vw;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    color: $main-color;
+    background-color: $my-black;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+  }
+}
+
+/* ************** HEADER AND NAV ******************** */
+
+.nav-background {
+  background-color: $main-color;
+}
+
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.site-title {
+  display: inline-block;
+  color: $my-black;
+  padding: 2vh 0 1vh 0;
+  font-family: $fancy-font;
+  font-weight: 400;
+  font-size: 2em;
+  &:hover {
+    text-decoration: none;
+    color: $main-color;
+  }
+}
+
+.nav {
+  width: 100%;
+  display: inline-block;
+  ul {
+    padding: 0;
+    margin: 0;
+    float: right;
+    li {
+      display: inline-block;
+      font-family: $fancy-font;
+      padding: 2vh 0 1vh 0;
+      position: relative;
+      margin-left: 5vw;
+    }
+  }
+}
+
+.nav-links {
+  color: $my-black;
+  font-family: $fancy-font;
+  &:hover {
+    color: $main-color;
+  }
+}
+
+.register {
+  border: 2px solid $my-black;
+  color: $my-black;
+  padding: 1vh 1vw;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    color: $main-color;
+    background-color: $my-black;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+  }
+}
+
+.alpha-nav {
+  width: 100%;
+  display: inline-block;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      font-family: $fancy-font;
+      padding: 1vh 0 2vh 0;
+      position: relative;
+      margin-right: 1vw;
+    }
+  }
+}
+
+/* ******************** FOOTER ******************** */
+
+.full-footer-container {
+  width: 100%;
+  clear: both;
+  margin-top: 5vh;
+  padding: 2vh 0;
+}
+
+.footer {
+  width: 100%;
+  display: inline-block;
+  font-family: $fancy-font;
+  span {
+    float: left;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+    li {
+      position: relative;
+      display: inline-block;
+      margin: 0 1vw;
+      &:first-child {
+        margin: 0 1vw 0 0;
+      }
+    }
+  }
+}
+
+.footer-disclaimer {
+  font-family: $fancy-font;
+  font-size: .75em;
+  text-align: center;
+}
+
+/* ****************************** AMAZON AFFILIATE ************************* */
+
+.amazon-container {
+  width: 95%;
+  margin: 3vh 0;
+  padding: 2vh 0;
+  border-top: 2px #212121 solid;
+  border-bottom: 2px #212121 solid;
+}
+
+.amazon-tiny {
+  padding: 2vh 0 0 0;
+  font-family: $fancy-font;
+}
+
+
+/* ************************ MEDIA QUERY **************************** */
+
+@media screen and (max-width: 1250px) {
+
+  .mighty-site-title {
+    font-size: 10em;
+  }
+
+  .home-container {
+    margin: 15vh 0;
+  }
+
+  .veggie-site-title {
+    margin: 8vh 0;
+  }
+
+}
+
+@media screen and (max-width: 975px) {
+
+  .mighty-site-title {
+    font-size: 8em;
+  }
+
+  .home-container {
+    margin: 10vh 0;
+  }
+
+  .veggie-site-title {
+    margin: 6vh 0;
+  }
+
+}
+
 @media screen and (max-width: 800px) {
 
   .content {
@@ -125,5 +605,115 @@ h4 {
   .alpha-nav {
     text-align: center;
   }
+
+  .four {
+    width: 49%;
+  }
+
+  .mighty-site-title {
+    font-size: 7em;
+  }
+
+  .home-container {
+    margin: 10vh 0;
+  }
+
+  .veggie-site-title {
+    margin: 6vh 0;
+  }
+
+  .text-field {
+    width: 100%;
+  }
+
+  .text-area {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 30vh;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .delete-account {
+    width: 100%;
+  }
+
+  .site-title {
+    text-align: center;
+  }
+
+  .nav {
+    text-align: center;
+    ul {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  .alpha-nav {
+    ul {
+      text-align: center;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    span {
+      float: none;
+      text-align: center;
+    }
+    ul {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  .amazon-container {
+    width: 100%;
+  }
+
+  .ad-separate {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 585px) {
+
+  .mighty-site-title {
+    font-size: 5em;
+  }
+
+  .home-container {
+    margin: 6vh 0;
+  }
+
+  .veggie-site-title {
+    margin: 4vh 0;
+  }
+
+  .home-text-field {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  .mighty-site-title {
+    font-size: 4em;
+  }
+
+  .home-container {
+    margin: 5vh 0;
+  }
+
+  .veggie-site-title {
+    margin: 3vh 0;
+  }
+
 
 }

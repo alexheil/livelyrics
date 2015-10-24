@@ -57,7 +57,13 @@ ul {
 a {
   color: $main-color;
   text-decoration: none;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
   &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
     color: $accent-color1;
   }
 }
@@ -293,26 +299,24 @@ h4 {
 
 .submit-button {
   width: 100%;
-  padding: 10px 0px 7px 0px;
+  padding: 10px 0px;
   text-align: center;
   font-family: $fancy-font;
   font-size: 1.3em;
   background-color: $main-color;
-  border-bottom: 3px solid $main-color;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  color: $my-black;
+  border: 3px solid $main-color;
+  color: #fff;
   cursor: pointer;
   box-sizing: border-box;
   -webkit-transition: .3s;
   -moz-transition: .3s;
   -o-transition: .3s;
   &:hover {
+    color: $my-black;
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;
-    border-bottom: 3px solid $my-black;
+    border: 3px solid $my-black;
   }
 }
 
@@ -359,6 +363,7 @@ h4 {
   border-left: none;
   border-bottom: 3px solid $my-black;
   display: inline-block;
+  box-sizing: border-box;
 }
 
 /* ************** HOME HEADER *************************** */
@@ -547,6 +552,17 @@ h4 {
   padding: 2vh 0;
   border-top: 2px #212121 solid;
   border-bottom: 2px #212121 solid;
+}
+
+.amazon-title {
+  font-family: $fancy-font;
+  font-size: 3em;
+  a {
+    color: $accent-color2;
+    &:hover {
+      color: $accent-color3;
+    }
+  }
 }
 
 .amazon-tiny {

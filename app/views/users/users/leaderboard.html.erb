@@ -1,0 +1,18 @@
+<%= provide(:title, "Leaderboards") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+
+      <% @users.sort{ |a,b| b.lyrics.count <=> a.lyrics.count  }.each do |user| %>
+      <div class="track-seperate fancy-font">
+        <%= link_to user.username, user_path(user) %> - <%= pluralize(user.lyrics.count, 'lyric') %> posted
+      </div>
+      <% end %>
+
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

@@ -1,6 +1,7 @@
 class Users::UsersController < ApplicationController
 
-  def index
+  def leaderboard
+    @users = User.all
   end
 
   def show

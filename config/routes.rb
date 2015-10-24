@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show], controller: 'users/users'
 
+  get 'leaderboards' => 'users/users#leaderboard'
+
   get 'a' => 'static_pages#a'
   get 'b' => 'static_pages#b'
   get 'c' => 'static_pages#c'

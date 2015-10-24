@@ -10,7 +10,7 @@
       </div>
       <% @user.lyrics.each do |lyrics| %>
       <div class="track-separate">
-        <%= link_to lyrics.track_name, artist_album_lyric_path(Artist.find(lyrics.artist_id).slug, Album.find(lyrics.album_id).slug, lyrics) %>
+        <%= link_to lyrics.track_name, artist_album_lyric_path(Artist.find(lyrics.artist_id).slug, Album.find(lyrics.album_id).slug, lyrics) %> - <span class="accent"><%= link_to Artist.friendly.find(lyrics.artist_id). artist_name, artist_path(Artist.find(lyrics.artist_id).slug) %></span>
       </div>
       <% end %>
 

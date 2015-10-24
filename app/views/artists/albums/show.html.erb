@@ -24,6 +24,8 @@
         <%= link_to "Add a track to #{@album.name}", new_artist_album_lyric_path(@artist, @album) %>
       </div>
 
+      <%= render 'partials/amazon_affiliate' %>
+
       <% if user_signed_in? && current_user.username == "alexheil" %>
       <div class="hello-alex">
         <%= link_to "Hello, Alex.", artist_album_path, data: { confirm: "Care for some Mighty Taco?" }, method: :delete %>

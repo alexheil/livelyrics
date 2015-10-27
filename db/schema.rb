@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505135506) do
+ActiveRecord::Schema.define(version: 20151027014640) do
 
   create_table "albums", force: true do |t|
     t.integer  "artist_id"
@@ -71,8 +71,6 @@ ActiveRecord::Schema.define(version: 20150505135506) do
     t.string   "username",               default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "publisher_id",           default: "", null: false
-    t.string   "data_ad_slot",           default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -91,6 +89,7 @@ ActiveRecord::Schema.define(version: 20150505135506) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.text     "google_adsense_code",    default: "", null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

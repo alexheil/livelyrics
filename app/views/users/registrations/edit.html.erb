@@ -13,10 +13,7 @@
           <%= f.text_field :username, autofocus: true, placeholder: "Change Your Username", class: "text-field"  %>
         </div>
         <div class="field">
-          <%= f.text_field :publisher_id, placeholder: "Google AdSense Publisher ID", class: "text-field" %>
-        </div>
-        <div class="field">
-          <%= f.text_field :data_ad_slot , placeholder: "Google AdSense Data Ad Slot ID", class: "text-field" %>
+          <%= f.text_area :google_adsense_code, placeholder: "Google AdSense Code Snippet (Must Be Responisive)", class: "text-area" %>
         </div>
         <div class="field">
           <%= f.email_field :email, placeholder: "Change Your Email Address", class: "text-field" %>

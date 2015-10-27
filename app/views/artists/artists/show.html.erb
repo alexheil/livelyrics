@@ -7,7 +7,7 @@
 
       <div class="artist-name">
         <h2><%= @artist.artist_name %></h2>
-        <% if @artist.artist_facebook == ""  %>
+        <% if @artist.artist_facebook.blank?  %>
         <% else %>
           <%= link_to "Facebook", @artist.artist_facebook, :target => "_blank" %>
         <% end %>

@@ -22,7 +22,7 @@ class Artist < ActiveRecord::Base
 
     def smart_add_url_protocol
       unless self.artist_facebook[/\Ahttp:\/\//] || self.artist_facebook[/\Ahttps:\/\//]
-        self.artist_facebook = "https://#{self.artist_facebook}" unless artist_facebook == ""
+        self.artist_facebook = "https://#{self.artist_facebook}" unless artist_facebook.blank?
       end
     end
 

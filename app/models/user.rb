@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 50 }, format: { with: /\A[a-zA-Z0-9 ]+\Z/i }
-  validates :google_adsense_code, length: { in: 400..450 }, allow_blank: true
+  validates :google_adsense_code, length: { in: 300..400 }, allow_blank: true
 
   before_save :should_generate_new_friendly_id?, if: :username_changed?
   before_save :downcase_username

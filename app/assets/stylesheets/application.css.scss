@@ -233,6 +233,12 @@ h4 {
 .veggie-site-title {
   text-align: center;
   margin: 10vh 0;
+  a {
+    color: $main-color;
+    &:hover {
+      color: $accent-color1;
+    }
+  }
 }
 
 .four {
@@ -718,6 +724,7 @@ h4 {
 
   .four {
     width: 100%;
+    text-align: center
   }
 
 }

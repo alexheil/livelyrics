@@ -3,25 +3,13 @@
   <div class="container">
     <div class="content">
 
-      <div class="ad-separate">
-        <% if @user.google_adsense_code.blank? %>
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- let lyrics Top -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-7899643142531807"
-               data-ad-slot="9394869652"
-               data-ad-format="auto"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+      <div class="amazon-container">
+        <% if @user.amazon_affiliate_id.blank? %>
+          <span class="amazon-title"><a target="_blank" href="http://www.amazon.com/mn/search/ref=as_li_ss_tl?_encoding=UTF8&camp=1789&creative=390957&field-keywords=<%= @artist.artist_name %>&linkCode=ur2&linkId=RPGD2D4ZYZC7BVNK&tag=alehei0c-20&url=search-alias%3Daps&linkId=UM5CKLMTFR6G3MJ4">
+          Listen to <%= @lyric.track_name %> on MP3!</a></span>
         <% else %>
-          <%= raw(@user.google_adsense_code) %>
-          <% if user_signed_in? && @user == current_user %>
-            <div class="track-separate">
-              This is your ad!
-            </div>
-          <% end %>
+          <span class="amazon-title"><a target="_blank" href="http://www.amazon.com/mn/search/ref=as_li_ss_tl?_encoding=UTF8&camp=1789&creative=390957&field-keywords=<%= @artist.artist_name %>&linkCode=ur2&linkId=RPGD2D4ZYZC7BVNK&tag=<%= @user.amazon_affiliate_id %>&url=search-alias%3Daps&linkId=UM5CKLMTFR6G3MJ4">
+          Listen to <%= @lyric.track_name %> on MP3!</a></span>
         <% end %>
       </div>
 

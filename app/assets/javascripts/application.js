@@ -14,26 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-var highlightScript = function() {
-
-var getSelectionText = function() {
-var text = "";
-if (window.getSelection) {
-    text = window.getSelection().toString();
-} else if (document.selection && document.selection.type != "Control") {
-    text = document.selection.createRange().text;
-}
-return text;
-}
-
-$('#lyrics').mouseup(function (e) {
-    if (getSelectionText() != "") {
-        window.open('https://twitter.com/intent/tweet?text='+encodeURI(getSelectionText()) + '&url=' + encodeURI(document.URL));
-    }
-});
-
-};
-
-$(document).ready(highlightScript);
-$(document).on('page:load', highlightScript);

@@ -1,0 +1,20 @@
+<%= provide(:title, "#") %>
+<%= render 'partials/header' %>
+<%= render 'partials/alpha' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="content">
+
+      <% @artists.each do |artist| %>
+        <% if artist.artist_name.starts_with?("1") || artist.artist_name.starts_with?("2") || artist.artist_name.starts_with?("3") || artist.artist_name.starts_with?("4") || artist.artist_name.starts_with?("5") || artist.artist_name.starts_with?("6") || artist.artist_name.starts_with?("7") || artist.artist_name.starts_with?("8") || artist.artist_name.starts_with?("9") %>
+        <div class="track-separate">
+          <%= link_to artist.artist_name, artist_path(artist) %>
+        </div>
+        <% end %>
+       <% end %>
+
+    </div>
+    <%= render 'partials/static_sidebar' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   get 'leaderboards' => 'users/users#leaderboard'
 
+  get 'numbers' => 'static_pages#numbers'
   get 'a' => 'static_pages#a'
   get 'b' => 'static_pages#b'
   get 'c' => 'static_pages#c'

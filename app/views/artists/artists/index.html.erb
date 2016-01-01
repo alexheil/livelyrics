@@ -13,7 +13,7 @@
        <% end %>
       <% else %>
       <div class="track-separate">
-        There are no artists containing the term(s) "<%= params[:search] %>."
+        There are no artists containing the term(s) "<%= params[:search] %>". <%= link_to "Add an artist?", new_artist_path %>
       </div>
       <% end %>
 

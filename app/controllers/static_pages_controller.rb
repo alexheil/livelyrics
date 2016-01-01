@@ -22,6 +22,10 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+  def numbers
+    @artists = Artist.all
+  end
+
   def a
     @artists = Artist.all
   end

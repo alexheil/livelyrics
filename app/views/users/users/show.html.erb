@@ -8,7 +8,7 @@
       <div class="username">
         <span class="username-text"><%= @user.username %></span> - <%= @user.lyrics.count %> lyrics posted
       </div>
-      <% @user.lyrics.each do |lyrics| %>
+      <% @user.lyrics.take(500).each do |lyrics| %>
       <div class="track-separate">
         <%= link_to lyrics.track_name, artist_album_lyric_path(Artist.find(lyrics.artist_id).slug, Album.find(lyrics.album_id).slug, lyrics) %> - <span class="accent"><%= link_to Artist.friendly.find(lyrics.artist_id). artist_name, artist_path(Artist.find(lyrics.artist_id).slug) %></span>
       </div>

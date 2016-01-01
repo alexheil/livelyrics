@@ -6,7 +6,7 @@
     <div class="content">
 
       <% @users.sort{ |a,b| b.lyrics.count <=> a.lyrics.count  }.each do |user| %>
-      <div class="track-seperate fancy-font">
+      <div class="track-separate fancy-font">
         <%= link_to user.username, user_path(user) %> - <%= pluralize(user.lyrics.count, 'lyric') %> posted
       </div>
       <% end %>

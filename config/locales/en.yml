@@ -42,7 +42,7 @@ en:
               too_long: "Your track name is too long. Keep it under 150 characters."
             track_number:
               taken: "That track number already exists for this album."
-              blank: "You need to include a track year."
+              blank: "You need to include a track number."
               too_long: "One or two digits allowed for your track number. I hope you understand."
               greater_than: "Your track number has to be over zero, bruh."
               not_a_number: "That track number is defintely not a number."

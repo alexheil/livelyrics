@@ -7,10 +7,9 @@
 
       <div class="artist-name">
         <h2><%= @artist.artist_name %></h2>
-        <% if @artist.artist_facebook.blank?  %>
-        <% else %>
-          <%= link_to "Facebook", @artist.artist_facebook, :target => "_blank" %>
-        <% end %>
+
+        <%= render 'partials/artist_website' %>
+
       </div>
       <% @artist.albums.each do |album| %>
       <div class="album-separate">

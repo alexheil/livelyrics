@@ -8,7 +8,7 @@ class Artist < ActiveRecord::Base
   default_scope -> { order('artist_name') }
 
   validates :artist_name, presence: true, uniqueness: true, length: { maximum: 40 }
-  validates :artist_facebook, format: { with: /\A((http|https)?:\/\/)?(www.)?facebook.com\//i  }, allow_blank: true
+  validates :artist_facebook, format: { with: /\A((http|https)?:\/\/)?(www.)?(facebook|noisaea).com\//i  }, allow_blank: true
 
   before_save :smart_add_url_protocol
   before_save :downcase_url

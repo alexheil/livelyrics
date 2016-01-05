@@ -1,0 +1,7 @@
+<% if @artist.artist_facebook.present?  %>
+  <% if @artist.artist_facebook.include? "noisaea" %>
+    <%= link_to "Noisaea", @artist.artist_facebook, :target => "_blank" %>
+  <% else %>
+    <%= link_to "Facebook", @artist.artist_facebook, :target => "_blank" %>
+  <% end %>
+<% end %>

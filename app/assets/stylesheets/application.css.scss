@@ -566,12 +566,29 @@ h4 {
   font-family: $fancy-font;
   font-size: 3em;
   line-height: 1em;
+  svg {
+    fill: $main-color;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    &:hover {
+      fill: $accent-color1;
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -o-transition: .3s;
+    }
+  }
   a {
     color: $accent-color2;
     &:hover {
       color: $accent-color3;
     }
   }
+}
+
+.play {
+  width: 5vh;
+  height: 5vh;
 }
 
 .amazon-tiny {
@@ -706,6 +723,11 @@ h4 {
 
   .amazon-title {
     font-size: 1.5em;
+  }
+
+  .play {
+    width: 2.5vh;
+    height: 2.5vh;
   }
 
 }

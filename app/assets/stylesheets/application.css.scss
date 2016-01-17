@@ -587,13 +587,38 @@ h4 {
 }
 
 .play {
-  width: 5vh;
-  height: 5vh;
+  width: 50px;
+  height: 50px;
 }
 
-.amazon-tiny {
-  padding: 2vh 0 0 0;
+/* ************************ NOISAEA **************************** */
+
+.noisaea-container {
+  width: 100%;
   font-family: $fancy-font;
+  text-align: center;
+  margin: 3vh auto;
+  padding: 3vh 0;
+  border-top: 1px solid $my-black;
+}
+
+.noisaea-title {
+  color: #673AB7;
+  font-size: 2em;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    color: $my-black;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+  }
+}
+
+.noisaea-sub {
+  font-size: 1.35em;
+  color: $my-black;
 }
 
 
@@ -723,6 +748,11 @@ h4 {
 
   .amazon-title {
     font-size: 1.5em;
+  }
+
+  .play {
+    width: 30px;
+    height: 30px;
   }
 
 }

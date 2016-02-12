@@ -21,7 +21,7 @@ en:
               blank: "You need to include an artist name."
               too_long: "Your artist name is too long. Keep it under 40 characters."
             artist_facebook:
-             invalid: "That isn't a Facebook URL."
+             invalid: "That isn't a Facebook or Noisaea URL."
         album:
           attributes:
             name:

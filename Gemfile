@@ -15,7 +15,7 @@ gem 'coffee-script-source', '1.8.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'friendly_id', '~> 5.1.0'
 
-gem 'devise'
+gem 'devise', '~> 3.5.7'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -35,7 +35,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'puma'
+  gem 'puma', '~> 2.16.0'
 end
 
 # Use Capistrano for deployment

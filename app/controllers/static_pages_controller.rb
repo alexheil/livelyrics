@@ -1,10 +1,15 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @artists = Artist.all
-    @albums = Album.all
-    @lyrics = Lyric.all
-    @users = User.all
+    @recent_artists = Artist.reorder("created_at desc").limit(10)
+    @recent_albums = Album.reorder("created_at desc").limit(10)
+    @recent_lyrics = Lyric.reorder("created_at desc").limit(10)
+    @recent_users = User.reorder("created_at desc").limit(10)
+
+    @popular_artists = Artist.limit(10)
+    @popular_albums = Album.limit(10)
+    @popular_lyrics = Lyric.limit(10)
+    @popular_users = User.popular
   end
 
   def learn

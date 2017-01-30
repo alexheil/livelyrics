@@ -30,45 +30,37 @@
   <div class="container">
     <div class="four">
       Recent Artists
-      <% if @artists.any? %>
-        <% @artists.sort{ |a,b| b.created_at <=> a.created_at }.take(10).each do |artist| %>
-        <div>
-          <%= link_to artist.artist_name, artist_path(artist) %>
-        </div>
-        <% end %>
-      <% end %>
+      <% @recent_artists.each do |artist| %>
+      <div>
+        <%= link_to artist.artist_name, artist_path(artist) %>
+      </div>
+      <% end %>ß
     </div>
 
     <div class="four">
       Recent Albums
-      <% if @albums.any? %>
-        <% @albums.sort{ |a,b| b.created_at <=> a.created_at }.take(10).each do |album| %>
-        <div>
-          <%= link_to album.name, artist_album_path(Artist.find(album.artist_id).slug, album) %>
-        </div>
-        <% end %>
+      <% @recent_albums.each do |album| %>
+      <div>
+        <%= link_to album.name, artist_album_path(Artist.find(album.artist_id).slug, album) %>
+      </div>
       <% end %>
     </div>
 
     <div class="four">
       Recent Tracks
-      <% if @lyrics.any? %>
-        <% @lyrics.sort{ |a,b| b.created_at <=> a.created_at }.take(10).each do |lyrics| %>
+        <% @recent_lyrics.each do |lyrics| %>
         <div>
           <%= link_to lyrics.track_name, artist_album_lyric_path(Artist.find(lyrics.artist_id).slug, Album.find(lyrics.album_id).slug, lyrics) %>
         </div>
-        <% end %>
       <% end %>
     </div>
 
     <div class="four">
       Popular Users
-      <% if @users.any? %>
-        <% @users.sort{ |a,b| b.lyrics.count <=> a.lyrics.count  }.take(10).each do |user| %>
+      <% @popular_users.each do |user| %>
         <div>
           <%= link_to user.username, user_path(user) %> - <%= pluralize(user.lyrics.count, "lyric") %> posted
         </div>
-        <% end %>
       <% end %>
     </div>
   </div>

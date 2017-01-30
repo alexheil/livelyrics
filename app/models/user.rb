@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :timeoutable
    #:omniauthable, :confirmable, :lockable
 
+  scope :popular, -> {select("users.id, users.slug, users.username, count(lyrics.id) lyrics_count").joins(:lyrics).group("users.id").reorder("lyrics_count desc").limit(10)}
+
   has_many :lyrics
   has_many :comments, dependent: :destroy
 

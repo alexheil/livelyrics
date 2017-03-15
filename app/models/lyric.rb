@@ -1,4 +1,4 @@
-class Lyric < ActiveRecord::Base
+class Lyric < ApplicationRecord
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged

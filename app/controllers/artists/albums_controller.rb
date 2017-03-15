@@ -1,10 +1,7 @@
 class Artists::AlbumsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: :show
   before_action :authenticate_alex!, only: [:edit, :update,:destroy]
-
-  def index
-  end
 
   def show
     @album = Album.friendly.find(params[:id])

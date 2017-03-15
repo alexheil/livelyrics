@@ -1,4 +1,4 @@
-class Album < ActiveRecord::Base
+class Album < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 

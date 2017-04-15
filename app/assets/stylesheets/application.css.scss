@@ -129,6 +129,10 @@ h4 {
   }
 }
 
+.black {
+  color: $my-black;
+}
+
 /* ******************************* LYRICS ******************************** */
 
 .artist-name {
@@ -560,7 +564,7 @@ h4 {
 }
 
 .noisaea-title {
-  color: #673AB7;
+  color: #ff9900;
   font-size: 2em;
   -webkit-transition: .3s;
   -moz-transition: .3s;

@@ -10,7 +10,6 @@ $accent-color1: #A9E2AD;
 $accent-color2: #BE5B00;
 $accent-color3: #FFC695;
 $my-black: #212121;
-$normal-font: Georgia, "Times New Roman", Times, serif;
 $fancy-font: 'Open Sans', Helvetica, Arial, sans-serif;
 
 
@@ -19,7 +18,7 @@ body {
   margin: 0;
   font-size: 20px;
   line-height: 1.75em;
-  font-family: $normal-font;
+  font-family: $fancy-font;
   font-weight: 300;
 }
 
@@ -45,7 +44,6 @@ h2 {
   padding: 0;
   margin: 0;
   font-size: 1.75em;
-  font-family: $fancy-font;
   font-weight: 300;
 }
 
@@ -53,14 +51,12 @@ h3 {
   padding: 0;
   margin: 0;
   font-size: 1.2em;
-  font-family: $fancy-font;
 }
 
 h4 {
   padding: 0;
   margin: 0;
   font-size: 3em;
-  font-family: $fancy-font;
   font-weight: 300;
   line-height: 3rem;
 }
@@ -121,11 +117,6 @@ h4 {
   width: 90%;
   margin: 0 auto;
   padding: 2vh 0;
-  font-family: $fancy-font
-}
-
-.fancy-font {
-  font-family: $fancy-font;
 }
 
 .accent {
@@ -142,11 +133,9 @@ h4 {
 
 .artist-name {
   margin: 1vh 0;
-  font-family: $fancy-font;
 }
 
 .album-separate {
-  font-family: $fancy-font;
   margin: 3vh 0;
 }
 
@@ -159,14 +148,12 @@ h4 {
 }
 
 .track-separate {
-  font-family: $fancy-font;
   margin: 1vh 0;
 }
 
 .hello-alex {
   display: none;
   margin: 20vh 0;
-  font-family: $fancy-font;
   a {
     color: #212121;
     &:hover {
@@ -177,7 +164,6 @@ h4 {
 }
 
 .lyric-separate {
-  font-family: $fancy-font;
   word-break: break-word;
   white-space: pre-line;
   margin-bottom:  1vh;
@@ -187,7 +173,6 @@ h4 {
 /* ************************ USERS ************************** */
 
 .username {
-  font-family: $fancy-font;
   margin: 1vh 0 3vh 0;
 }
 
@@ -204,7 +189,6 @@ h4 {
 
 .home-line {
   padding: 2vh 0;
-  font-family: $fancy-font;
   a {
     color: $my-black;
   }
@@ -242,7 +226,6 @@ h4 {
   width: 24%;
   margin: 1vh auto;
   display: inline-block;
-  font-family: $fancy-font;
   vertical-align: top;
 }
 
@@ -258,7 +241,6 @@ h4 {
 
 .text-field {
   width: 95%;
-  font-family: $fancy-font;
   font-size: 16px;
   padding: 10px;
   border-top: none;
@@ -274,7 +256,6 @@ h4 {
   min-width: 95%;
   max-width: 95%;
   height: 25vh;
-  font-family: $fancy-font;
   font-size: 16px;
   padding: 10px;
   border-top: none;
@@ -283,10 +264,6 @@ h4 {
   border-bottom: 3px solid $main-color;
   display: inline-block;
   box-sizing: border-box;
-}
-
-.remember-me {
-  font-family: $fancy-font;
 }
 
 .actions {
@@ -304,8 +281,8 @@ h4 {
   width: 100%;
   padding: 10px 0px;
   text-align: center;
-  font-family: $fancy-font;
-  font-size: 1.3em;
+  font-size: 1.25em;
+  font-weight: 300;
   background-color: $main-color;
   border: 3px solid $main-color;
   color: #fff;
@@ -327,11 +304,9 @@ h4 {
   width: 95%;
   margin-top: 2vh;
   margin-bottom: 4vh;
-  font-family: $fancy-font;
 }
 
 .shared-links {
-  font-family: $fancy-font;
   margin-top: 2vh;
   margin-bottom: 4vh;
 }
@@ -342,11 +317,10 @@ h4 {
 
 #error_explanation {
   color: #f00;
-  font-family: $fancy-font;
   ul {
-      padding: 5px 0 5px 0;
-      list-style: none;
-      line-height: 30px;
+    padding: 5px 0 5px 0;
+    list-style: none;
+    line-height: 30px;
   }
 }
 
@@ -357,7 +331,6 @@ h4 {
 
 .home-text-field {
   width: 50%;
-  font-family: $fancy-font;
   font-size: 16px;
   text-align: center;
   padding: 10px;
@@ -380,7 +353,6 @@ h4 {
     text-align: center;
     li {
       display: inline-block;
-      font-family: $fancy-font;
       padding: 2vh 0 1vh 0;
       position: relative;
       margin-left: 5vw;
@@ -397,7 +369,6 @@ h4 {
     text-align: center;
     li {
       display: inline-block;
-      font-family: $fancy-font;
       padding: 1vh 0 2vh 0;
       position: relative;
       margin-right: 1vw;
@@ -407,7 +378,6 @@ h4 {
 
 .home-nav-links {
   color: $my-black;
-  font-family: $fancy-font;
   &:hover {
     color: $main-color;
   }
@@ -444,8 +414,7 @@ h4 {
   display: inline-block;
   color: $my-black;
   padding: 2vh 0 1vh 0;
-  font-family: $fancy-font;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 2em;
   &:hover {
     text-decoration: none;
@@ -462,7 +431,6 @@ h4 {
     float: right;
     li {
       display: inline-block;
-      font-family: $fancy-font;
       padding: 2vh 0 1vh 0;
       position: relative;
       margin-left: 5vw;
@@ -472,7 +440,6 @@ h4 {
 
 .nav-links {
   color: $my-black;
-  font-family: $fancy-font;
   &:hover {
     color: $main-color;
   }
@@ -502,7 +469,6 @@ h4 {
     margin: 0;
     li {
       display: inline-block;
-      font-family: $fancy-font;
       padding: 1vh 0 2vh 0;
       position: relative;
       margin-right: 1vw;
@@ -522,7 +488,6 @@ h4 {
 .footer {
   width: 100%;
   display: inline-block;
-  font-family: $fancy-font;
   span {
     float: left;
   }
@@ -542,7 +507,6 @@ h4 {
 }
 
 .footer-disclaimer {
-  font-family: $fancy-font;
   font-size: .75em;
   text-align: center;
 }
@@ -558,7 +522,6 @@ h4 {
 }
 
 .amazon-title {
-  font-family: $fancy-font;
   font-size: 3em;
   line-height: 1em;
   svg {
@@ -589,8 +552,7 @@ h4 {
 /* ************************ NOISAEA **************************** */
 
 .noisaea-container {
-  width: 100%;
-  font-family: $fancy-font;
+  witdh: 100%;
   text-align: center;
   margin: 3vh auto;
   padding: 3vh 0;

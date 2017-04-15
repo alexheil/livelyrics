@@ -20,6 +20,7 @@ en:
             artist_name:
               blank: "You need to include an artist name."
               too_long: "Your artist name is too long. Keep it under 40 characters."
+              taken: "Someone has already created that artist."
             artist_facebook:
              invalid: "That isn't a Facebook or Noisaea URL."
         album:

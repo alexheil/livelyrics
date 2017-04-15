@@ -1,3 +1,5 @@
+require 'api_constraints'
+
 Rails.application.routes.draw do
 
   root 'static_pages#home'
@@ -55,5 +57,15 @@ Rails.application.routes.draw do
   get 'x' => 'static_pages#x'
   get 'y' => 'static_pages#y'
   get 'z' => 'static_pages#z'
+
+#  namespace :api, defaults: { format: :json } do
+#    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+#      resources :artists, only: [:index, :show] do
+#        resources :albums, only: :show do
+#          resources :lyrics, only: :show
+#        end
+#      end
+#    end
+#  end
 
 end

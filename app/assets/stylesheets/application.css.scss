@@ -5,9 +5,9 @@
 
 
 /* ********************** UNIVERSAL ********************** */
-$main-color: #4CAF50;
+$main-color: #009118;
 $accent-color1: #A9E2AD;
-$accent-color2: #DE9B61;
+$accent-color2: #BE5B00;
 $accent-color3: #FFC695;
 $my-black: #212121;
 $normal-font: Georgia, "Times New Roman", Times, serif;
@@ -17,9 +17,10 @@ $fancy-font: 'Open Sans', Helvetica, Arial, sans-serif;
 body {
   padding: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.75em;
   font-family: $normal-font;
+  font-weight: 300;
 }
 
 ul {
@@ -43,8 +44,9 @@ a {
 h2 {
   padding: 0;
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-family: $fancy-font;
+  font-weight: 300;
 }
 
 h3 {
@@ -149,7 +151,11 @@ h4 {
 }
 
 .album-name {
-  font-size: 1.3em;
+  font-size: 1.5em;
+}
+
+.track-name {
+  font-size: 1.25em;
 }
 
 .track-separate {

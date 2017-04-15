@@ -28,8 +28,8 @@
       <div class="album-separate">
         <span class="album-name"><%= link_to @album.name, artist_album_path(@artist, @album) %></span>
       </div>
-      <div class="album-separate">
-        <strong><%= @lyric.track_name %></strong>
+      <div class="album-separate track-name">
+        <%= @lyric.track_name %>
       </div>
       <div class="lyric-separate">
         <%= @lyric.lyrics %>
@@ -41,7 +41,7 @@
       <%= render 'partials/amazon_affiliate' %>
 
       <div class="album-separate">
-        <strong>What is the meaning of <%= @lyric.track_name %> by <%= @artist.artist_name %>?</strong>
+        What is the meaning of <%= @lyric.track_name %> by <%= @artist.artist_name %>?
       </div>
       <div class="album-separate">
         <%= form_for(Comment.new, url: artist_album_lyric_comments_path(@artist, @album, @lyric)) do |f| %>

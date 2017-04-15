@@ -15,9 +15,11 @@
         <span class="album-name"><%= @album.name %></span> - <%= @album.year %>
       </div>
       <% @album.lyrics.each do |lyric| %>
-      <div class="track-separate">
-        <%= lyric.track_number %> - <%= link_to lyric.track_name, artist_album_lyric_path(@artist, @album, lyric) %>
-      </div>
+      <% cache lyric do %>
+        <div class="track-separate">
+          <%= lyric.track_number %> - <%= link_to lyric.track_name, artist_album_lyric_path(@artist, @album, lyric) %>
+        </div>
+      <% end %>
       <% end %>
       <div class="album-separate">
         <%= link_to "Add a track to #{@album.name}", new_artist_album_lyric_path(@artist, @album) %>

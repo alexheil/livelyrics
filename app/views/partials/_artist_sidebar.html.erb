@@ -10,17 +10,21 @@
   <% end %>
 
   <% @artist.albums.each do |album| %>
-  <div class="album-separate">
-    <span class="album-name accent"><%= link_to album.name, artist_album_path(@artist, album) %></span> - <%= album.year %>
-  </div >
-  <% album.lyrics.each do |lyric| %>
-  <div class="track-separate">
-    <%= lyric.track_number %> - <%= link_to lyric.track_name, artist_album_lyric_path(@artist, album, lyric) %>
-  </div>
+  <% cache album do %>
+    <div class="album-separate">
+      <span class="album-name accent"><%= link_to album.name, artist_album_path(@artist, album) %></span> - <%= album.year %>
+    </div >
+    <% album.lyrics.each do |lyric| %>
+    <% cache lyric do %>
+      <div class="track-separate">
+        <%= lyric.track_number %> - <%= link_to lyric.track_name, artist_album_lyric_path(@artist, album, lyric) %>
+      </div>
+    <% end %>
+    <% end %>
+    <div class="track-separate">
+      <%= link_to "Add a track to #{album.name}", new_artist_album_lyric_path(@artist, album) %>
+    </div>
   <% end %>
-  <div class="track-separate">
-    <%= link_to "Add a track to #{album.name}", new_artist_album_lyric_path(@artist, album) %>
-  </div>
   <% end %>
   <div class="album-separate">
     <%= link_to "Add an album for #{@artist.artist_name}", new_artist_album_path(@artist) %>

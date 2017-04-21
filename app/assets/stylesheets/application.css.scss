@@ -133,6 +133,22 @@ h4 {
   color: $my-black;
 }
 
+.small-text {
+  font-size: .5em;
+}
+
+.green {
+  color: #338A2E;
+}
+
+.blue {
+  color: #3C5DC0;
+}
+
+.brown {
+  color: #AA6B39;
+}
+
 /* ******************************* LYRICS ******************************** */
 
 .artist-name {
@@ -261,6 +277,7 @@ h4 {
   max-width: 95%;
   height: 25vh;
   font-size: 16px;
+  font-family: $fancy-font;
   padding: 10px;
   border-top: none;
   border-right: none;
@@ -541,9 +558,9 @@ h4 {
     }
   }
   a {
-    color: $accent-color2;
+    color:  #ff9900;
     &:hover {
-      color: $accent-color3;
+      color: $my-black;
     }
   }
 }

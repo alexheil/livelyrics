@@ -5,11 +5,11 @@
 
       <div class="amazon-container">
         <% if @user.amazon_affiliate_id.blank? %>
-          <span class="amazon-title"><a target="_blank" href="https://www.amazon.com/gp/dmusic/promotions/AmazonMusicUnlimited?ref_=assoc_tag_ph_1483579440886&_encoding=UTF8&camp=1789&creative=9325&linkCode=pf4&tag=letlyrics-20&linkId=d7a1bb8cf635a8e4d77a7b0c8e2fc2e4">
+          <span class="amazon-title"><a target="_blank" href="https://www.amazon.com/gp/dmusic/promotions/AmazonMusicUnlimited?ref_=assoc_tag_ph_1483579440886&_encoding=UTF8&camp=1789&creative=9325&linkCode=pf4&tag=letlyrics08-20&linkId=be9d68dfea0b36bb9ad47ca0b8eaf619">
           <svg class="play" viewBox="0 0 24 24">
             <path d="M12,20.14C7.59,20.14 4,16.55 4,12.14C4,7.73 7.59,4.14 12,4.14C16.41,4.14 20,7.73 20,12.14C20,16.55 16.41,20.14 12,20.14M12,2.14A10,10 0 0,0 2,12.14A10,10 0 0,0 12,22.14A10,10 0 0,0 22,12.14C22,6.61 17.5,2.14 12,2.14M10,16.64L16,12.14L10,7.64V16.64Z" />
           </svg>
-          Play <%= @lyric.track_name %>!</a></span></a></span>
+          <span class="small-text">Stream </span><%= @lyric.track_name %><span class="small-text"> on Amazon!</span></a></span> 
         <% else %>
           <span class="amazon-title"><a target="_blank" href="http://www.amazon.com/mn/search/ref=as_li_ss_tl?_encoding=UTF8&camp=1789&creative=390957&field-keywords=<%= @artist.artist_name %>&linkCode=ur2&linkId=RPGD2D4ZYZC7BVNK&tag=<%= @user.amazon_affiliate_id %>&url=search-alias%3Daps&linkId=UM5CKLMTFR6G3MJ4">
           <svg class="play" viewBox="0 0 24 24">
@@ -38,9 +38,7 @@
         Submitted by <%= link_to @user.username, user_path(@user) %>
       </div>
 
-      <%= render 'partials/amazon_affiliate' %>
-
-      <div class="album-separate">
+      <div class="album-separate track-name">
         What is the meaning of <%= @lyric.track_name %> by <%= @artist.artist_name %>?
       </div>
       <div class="album-separate">

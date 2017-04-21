@@ -28,8 +28,6 @@
         <%= link_to "Add an album for #{@artist.artist_name}", new_artist_album_path(@artist) %>
       </div>
 
-      <%= render 'partials/amazon_affiliate' %>
-
       <% if user_signed_in? && current_user.username == "alexheil" %>
         <div class="hello-alex">
           <%= link_to "Hello, Alex.", artist_path, method: :delete %>

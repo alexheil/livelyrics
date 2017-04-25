@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get 'learn_how_it_works' => 'static_pages#learn'
+  #get 'learn_how_it_works' => 'static_pages#learn'
   get 'privacy' => 'static_pages#privacy'
   get 'terms_of_use' => 'static_pages#terms'
   get 'dmca_policy' => 'static_pages#dmca'
